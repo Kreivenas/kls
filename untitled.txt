@@ -1,0 +1,72 @@
+export default function App() {
+  return (
+    <View style={styles.container}>
+      {/* Logotipo komponentas */}
+      <Logo />
+
+      {/* Nuotraukų komponentai */}
+      <View style={styles.imagesContainer}>
+        <TouchableOpacity onPress={() => navigateToProfile()}>
+          <Image source={require('./images/image1.png')} style={styles.image} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateToProfile()}>
+          <Image source={require('./images/image2.png')} style={styles.image} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateToProfile()}>
+          <Image source={require('./images/image3.png')} style={styles.image} />
+        </TouchableOpacity>
+      </View>
+
+      {/* Nuotraukų komponentai */}
+      <View style={styles.imagesContainer}>
+        <TouchableOpacity onPress={() => navigateToProfile()}>
+          <Image source={require('./images/image4.png')} style={styles.image} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateToProfile()}>
+          <Image source={require('./images/image5.png')} style={styles.image} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateToProfile()}>
+          <Image source={require('./images/image6.png')} style={styles.image} />
+        </TouchableOpacity>
+      </View>
+
+      {/* Issukio pavadinimas ir data */}
+      <View style={styles.issueContainer}>
+        <TouchableOpacity onPress={() => openIssueDescription()}>
+          <Text style={styles.issueTitle}>Issukio pavadinimas</Text>
+          <Text style={styles.issueDate}>Pateikta: 2023-6-12</Text>
+        </TouchableOpacity>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity onPress={() => acceptIssue()}>
+            <Text style={styles.buttonText}>Priimti</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => rejectIssue()}>
+            <Text style={styles.buttonText}>Atmesti</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Laukelis ir mygtukas */}
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Įveskite savo iššūkio pavadinimą"
+          onChangeText={handleInputChange}
+        />
+        <TouchableOpacity onPress={() => showMoreInputData()}>
+          <Text style={styles.buttonText}>Patvirtinti</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+// Stiliaus objektas
+const styles = {
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  // Pridėkite stilių kitiems komponentams ir elementams
+};
